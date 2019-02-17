@@ -1,1 +1,32 @@
-// 1 hour
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" 
+ href="https://cdnjs.cloudflare.com/ajax/libs/nomalize/7.0.0/normalize.min.css">
+<link rel="stylesheet" type="text/css" 
+ href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+<title>Hunting Github</title>
+</head>
+<body>
+    <div class="container">
+        <button class="button">Need My Name</button>
+
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+    $('.button ').on('mouseup', function() {
+        $.get("https://api.github.com/users/PaoloLeano", displayName)
+    })
+    function displayName(data) {
+        $('.container').append(function() {
+            return "<h1>" + data.login + "</h1>"
+        });
+    }
+</script>
+</body>
+</html>
