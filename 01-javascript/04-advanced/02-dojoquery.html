@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/nomalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+     <script src= 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>Dojo Query</title>
+</head>
+<body>
+    <h1 id="clickIt">Click Me!</h1>
+    <h1 id="hoverOn">Hover!</h1>
+</body>
+<script>
+    function $Dojo(id){
+        this.myId = document.getElementById(id);
+        this.click = function(callback){
+            this.myId.addEventListener("click", callback);
+        };
+        this.hover = function(hoverin, hoverout){
+            this.myId.addEventListener("mouseover", hoverin);
+            this.myId.addEventListener("mouseout", hoverout);
+        };
+        return this;
+    }
+    $Dojo("clickIt").click(function() { $('#clickIt').append(" Click it again!") });
+    $Dojo("hoverOn").hover(function() { $('#hoverOn').append("<span> Hovering!</span>")}, function(){$('#hoverOn').find('span:last').remove();
+    });
+</script>
+</html>
