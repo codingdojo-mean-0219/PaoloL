@@ -10,7 +10,7 @@ app.get('/index.html', function(request, response) {
    console.log("The request object", request);
    console.log("The response object", response);
    // use the response object's .send() method to respond with an h1
-   response.send("<h1>Hello Express</h1>");
+   response.render('index')
 })
 // tell the express app to listen on port 8000, always put this at the end of your server.js file
 app.listen(8000, function() {
