@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/nomalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Details</title>
+</head>
+<body>
+    <div class="container">
+        <button><a href="/">Go Home</a></button>    
+        <button><a href="cats">Back To Cats Page</a></button>
+        <h1 class="center">Details page for: <%=cat.name%></h1>
+        <img src="<%=cat.picture%>" class="img-responsive" id="chester" alt="Cat" width="810" length="456">
+        <h3 class="center"><%=cat.kind%></h3>
+        <h4 class="center">My Favorite Foods Are:</h4>
+        <% for (food in cat.food){%>
+            <h5 class="center"><%=cat.food[food]%></h5>
+        <%}%>
+    </div>
+</body>
+</html>

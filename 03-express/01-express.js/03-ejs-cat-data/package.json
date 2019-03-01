@@ -1,0 +1,16 @@
+{
+  "name": "03-ejs-cat-data",
+  "version": "1.0.0",
+  "description": "ejs cats data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "you",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
