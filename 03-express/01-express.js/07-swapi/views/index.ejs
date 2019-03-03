@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/nomalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Star Wars Wiki</title>
+	<script src= 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready( ()=>{
+	
+	var people = [];
+	var peeps = 10;
+	var planets = [];
+	var orb = 10;
+	var type;
+	
+	$("button:nth-of-type(1)").on('click', ()=>{
+		get(people,0, type="people");
+		$('span').show();
+		$('span a:nth-of-type(2)').hide();
+		$('span a:nth-of-type(3)').show();
+	})
+	
+	$("button:nth-of-type(2)").on('click', ()=> {
+		get(planets,0, type="planets");
+		$('span').show();
+		$('span a:nth-of-type(2)').show();
+		$('span a:nth-of-type(3)').hide();
+	})
+	
+	$("span a:nth-of-type(1)").on('click', e =>{
+		
+		e.preventDefault();
+		display(type, -10)
+	})
+	
+	$("span a:nth-of-type(2)").on('click', e =>{
+		
+		e.preventDefault();
+		display(type, 61)
+	})
+	
+	$("span a:nth-of-type(3)").on('click', e =>{
+		
+		e.preventDefault();
+		display(type, 87)
+	})
+	
+	$("span a:nth-of-type(4)").on('click', e =>{
+		
+		e.preventDefault();
+		display(type, 10)
+	})
+	
+	const get =  (list,next,type) => {
+		return list.length == 0 || next != 0 ? 
+			$.get(`/${type}/${next}`, function(data){
+					
+					data.results.forEach( p => list.push(p.name) );
+					get(list,data.next ? data.next.substr(data.next.length-1) : 0, type);
+			}, 'json')
+			: display(list, null);
+	}
+	
+	const display = (data, next)=>{
+		$('#results').html(null);
+		
+		var end = 0;
+		
+		if(next === null) end = 10;
+		else if(type == "people"){
+			data = people;
+			if(next < 0) peeps = end = peeps + next < 10 ? 10 : peeps + next;
+			else peeps = end = peeps + next > 90 ? 87 : peeps + next;			
+		}
+		else{
+			data = planets;
+			if(next < 0) orb = end = orb + next < 10 ? 10 : orb + next;
+			else orb = end = orb + next > 60 ? 61 : orb + next;
+		}
+		
+		for(let i = next > 10 ? 0 : end-10; i < end; i++){
+			$('#results').append(`<p>${data[i]}</p>`);
+		}
+		
+	}
+	
+})
+    </script>
+</head>
+<body>
+	<div class="container">
+        <h1>Star Wars Wiki</h1>
+        <h3>What would you like to know more about?</h3>
+		<div id="buttons">
+            <button>People</button>
+            <button>Planets</button>
+		</div>
+		<div id="results">
+		</div>
+		<span>
+			<a href="">Previous 10</a>
+			<a href="">Get all 61 planets</a>
+			<a href="">Get all 87 people</a>
+			<a href="">Next 10</a>
+		</span>
+    </div>
+</body>
+</html>
