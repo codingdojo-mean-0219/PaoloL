@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/nomalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Dojo Survey</h1>
+        <form action="/result" method="POST">
+            <div>
+                <label for='name'>Name: </label>
+                <input type='text' name='name' id='name' placeholder="Wheeler Walker Jr">
+            </div>
+            <div>
+            <label for='location'>Location: </label>
+                <select name='location' id='location'>
+                    <option value='Berkley'>Berkley, CA</option>
+                    <option value='Boise'>Boise, ID</option>
+                    <option value='Chicago'>Chicago, IL</option>
+                    <option value='Dallas'>Dallas, TX</option>
+                    <option value='Los Angeles'>Los Angeles, CA</option>
+                    <option value='Orange County'>Orange County, CA</option>
+                </select>
+            </div>
+            <div>
+            <label for='language'>Favorite Language: </label>
+                <select name='language' id='language'>
+                    <option value='Python'>Python</option>
+                    <option value='Java'>Java</option>
+                    <option value='C#'>C#</option>
+                    <option value='JavaScript'>JavaScript</option>
+                </select>
+            </div>
+            <div>
+                <label for='comment'>Comment (Optional): </label>
+                <input type="textarea" name='comment' id='comment'>
+            </div>
+            <input type='submit' value='Submit' >
+        </form>
+    </div>
+
+</body>
+</html>
