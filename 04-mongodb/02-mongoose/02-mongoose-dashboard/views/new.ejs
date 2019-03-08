@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/nomalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Edit</title>
+</head>
+<body>
+    <div class="container">
+        <h1>New Page!</h1>
+        <!-- Submitted form will POST to / route -->
+        <form action="/" method='post'>
+            Name: <input type="text" name="name">
+            Weight: <input type="text" name="weight">
+            Color: <input type="text" name="color">
+            <input type="submit" value="Add new dog!">
+        </form>
+    </div>
+</body>
+</html>
