@@ -1,0 +1,14 @@
+{
+  "name": "01-1955-api",
+  "version": "1.0.0",
+  "description": "1955 API",
+  "main": "server.js",
+  "author": "you",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
+    "path": "^0.12.7"
+  }
+}
