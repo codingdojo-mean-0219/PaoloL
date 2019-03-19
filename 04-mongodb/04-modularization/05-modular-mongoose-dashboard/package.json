@@ -1,0 +1,16 @@
+{
+  "name": "05-modular-mongoose-dashboard",
+  "version": "1.0.0",
+  "description": "modular mongoose dashboard",
+  "main": "server.js",
+  "author": "you",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.4.19"
+  }
+}
