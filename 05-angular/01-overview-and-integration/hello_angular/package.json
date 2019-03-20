@@ -1,0 +1,14 @@
+{
+  "name": "hello_angular",
+  "version": "1.0.0",
+  "description": "hello amgular",
+  "main": "server.js",
+  "author": "you",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
+    "path": "^0.12.7"
+  }
+}
