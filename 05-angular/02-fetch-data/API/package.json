@@ -1,4 +1,8 @@
 {
+  "name": "API",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
@@ -6,6 +10,5 @@
     "fs": "^0.0.1-security",
     "mongoose": "^5.4.20",
     "path": "^0.12.7"
-  },
-  "version": "1.15.2"
+  }
 }
