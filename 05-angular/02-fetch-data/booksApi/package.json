@@ -1,0 +1,14 @@
+{
+  "name": "booksApi",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.4.20"
+  }
+}
