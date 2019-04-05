@@ -1,0 +1,18 @@
+<div class="card-deck">
+  <div class="card" *ngFor="let product of products">
+    <img
+      class="card-img-top"
+      src="{{ product.img }}"
+      alt="Card image"
+      onerror="this.onerror=null;this.src='../../assets/product.jpeg'"
+    />
+    <div class="card-body">
+      <h4 class="card-title">{{ product.name }}</h4>
+      <p class="card-text">{{ product.price | currency }}</p>
+
+      <a [routerLink]="['/edit', product.id]">Edit</a>
+
+      <a (click)="destroy(product)">Delete</a>
+    </div>
+  </div>
+</div>
